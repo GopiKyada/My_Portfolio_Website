@@ -92,8 +92,8 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-8 flex items-center space-x-8">
+          <div className="hidden lg:block">
+            <div className="ml-8 flex items-center space-x-6 xl:space-x-8">
               {navItems.map((item) => (
                 <a
                   key={item.label}
@@ -123,17 +123,18 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`relative p-2 text-[#e2d3fd] hover:text-white transition-transform duration-300 ease-in-out transform ${
                 isOpen ? "rotate-90 scale-125" : "rotate-0 scale-100"
               }`}
+              aria-label="Toggle menu"
             >
               {isOpen ? (
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5 sm:w-6 sm:h-6" />
               ) : (
-                <Menu className="w-6 h-6" />
+                <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
               )}
             </button>
           </div>
@@ -142,22 +143,22 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden transition-all duration-300 ease-in-out ${
+        className={`lg:hidden transition-all duration-300 ease-in-out ${
           isOpen
             ? "max-h-screen opacity-100"
             : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >
-        <div className="px-4 py-6 space-y-4">
+        <div className="px-4 py-6 space-y-3">
           {navItems.map((item, index) => (
             <a
               key={item.label}
               href={item.href}
               onClick={(e) => scrollToSection(e, item.href)}
-              className={`block px-4 py-3 text-lg font-medium transition-all duration-300 ease ${
+              className={`block px-4 py-3 text-base sm:text-lg font-medium transition-all duration-300 ease rounded-lg ${
                 activeSection === item.href.substring(1)
-                  ? "bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-semibold"
-                  : "text-[#e2d3fd] hover:text-white"
+                  ? "bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-semibold bg-white/5"
+                  : "text-[#e2d3fd] hover:text-white hover:bg-white/5"
               }`}
               style={{
                 transitionDelay: `${index * 100}ms`,

@@ -35,41 +35,40 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     Swal.fire({
-      title: 'Mengirim Pesan...',
-      html: 'Harap tunggu selagi kami mengirim pesan Anda',
+      title: "Mengirim Pesan...",
+      html: "Harap tunggu selagi kami mengirim pesan Anda",
       allowOutsideClick: false,
       didOpen: () => {
         Swal.showLoading();
-      }
+      },
     });
 
     try {
       // Ganti dengan email Anda di FormSubmit
-      const formSubmitUrl = 'https://formsubmit.co/ekizulfarrachman@gmail.com';
-      
+      const formSubmitUrl = "https://formsubmit.co/gnkyada177@gmail.com";
+
       // Siapkan data form untuk FormSubmit
       const submitData = new FormData();
-      submitData.append('name', formData.name);
-      submitData.append('email', formData.email);
-      submitData.append('message', formData.message);
-      submitData.append('_subject', 'Pesan Baru dari Website Portfolio');
-      submitData.append('_captcha', 'false'); // Nonaktifkan captcha
-      submitData.append('_template', 'table'); // Format email sebagai tabel
+      submitData.append("name", formData.name);
+      submitData.append("email", formData.email);
+      submitData.append("message", formData.message);
+      submitData.append("_subject", "Pesan Baru dari Website Portfolio");
+      submitData.append("_captcha", "false"); // Nonaktifkan captcha
+      submitData.append("_template", "table"); // Format email sebagai tabel
 
       await axios.post(formSubmitUrl, submitData, {
         headers: {
-          'Content-Type': 'multipart/form-data',
+          "Content-Type": "multipart/form-data",
         },
       });
 
-     
       Swal.fire({
-        title: 'Berhasil!',
-        text: 'Pesan Anda telah berhasil terkirim!',
-        icon: 'success',
-        confirmButtonColor: '#6366f1',
+        title: "Berhasil!",
+        text: "Pesan Anda telah berhasil terkirim!",
+        icon: "success",
+        confirmButtonColor: "#6366f1",
         timer: 2000,
-        timerProgressBar: true
+        timerProgressBar: true,
       });
 
       setFormData({
@@ -77,16 +76,15 @@ const ContactPage = () => {
         email: "",
         message: "",
       });
-
     } catch (error) {
       if (error.request && error.request.status === 0) {
         Swal.fire({
-          title: 'Berhasil!',
-          text: 'Pesan Anda telah berhasil terkirim!',
-          icon: 'success',
-          confirmButtonColor: '#6366f1',
+          title: "Berhasil!",
+          text: "Pesan Anda telah berhasil terkirim!",
+          icon: "success",
+          confirmButtonColor: "#6366f1",
           timer: 2000,
-          timerProgressBar: true
+          timerProgressBar: true,
         });
 
         setFormData({
@@ -96,10 +94,10 @@ const ContactPage = () => {
         });
       } else {
         Swal.fire({
-          title: 'Gagal!',
-          text: 'Terjadi kesalahan. Silakan coba lagi nanti.',
-          icon: 'error',
-          confirmButtonColor: '#6366f1'
+          title: "Gagal!",
+          text: "Terjadi kesalahan. Silakan coba lagi nanti.",
+          icon: "error",
+          confirmButtonColor: "#6366f1",
         });
       }
     } finally {
@@ -108,12 +106,12 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="px-[5%] sm:px-[5%] lg:px-[10%] " >
-      <div className="text-center lg:mt-[5%] mt-10 mb-2 sm:px-0 px-[5%]">
+    <div className="px-4 sm:px-[5%] lg:px-[10%]">
+      <div className="text-center lg:mt-[5%] mt-10 mb-2">
         <h2
           data-aos="fade-down"
           data-aos-duration="1000"
-          className="inline-block text-3xl md:text-5xl font-bold text-center mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]"
+          className="inline-block text-2xl sm:text-3xl md:text-5xl font-bold text-center mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]"
         >
           <span
             style={{
@@ -131,37 +129,33 @@ const ContactPage = () => {
         <p
           data-aos="fade-up"
           data-aos-duration="1100"
-          className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2"
+          className="text-slate-400 max-w-2xl mx-auto text-xs sm:text-sm md:text-base mt-2 px-4"
         >
-          If you have any inquiries, feel free to reach out, and I will respond at the earliest opportunity.
+          If you have any inquiries, feel free to reach out, and I will respond
+          at the earliest opportunity.
         </p>
       </div>
 
       <div
-        className="h-auto py-10 flex items-center justify-center 2xl:pr-[3.1%] lg:pr-[3.8%]  md:px-0"
+        className="h-auto py-6 sm:py-10 flex items-center justify-center"
         id="Contact"
       >
-        <div className="container px-[1%] grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-[45%_55%] 2xl:grid-cols-[35%_65%] gap-12" >
-          <div
-        
-            className="bg-white/5 backdrop-blur-xl rounded-3xl shadow-2xl p-5 py-10 sm:p-10 transform transition-all duration-500 hover:shadow-[#6366f1]/10"
-          >
-            <div className="flex justify-between items-start mb-8">
+        <div className="container grid grid-cols-1 lg:grid-cols-[45%_55%] 2xl:grid-cols-[35%_65%] gap-8 sm:gap-12">
+          <div className="bg-white/5 backdrop-blur-xl rounded-3xl shadow-2xl p-4 sm:p-6 lg:p-10 transform transition-all duration-500 hover:shadow-[#6366f1]/10">
+            <div className="flex justify-between items-start mb-6 sm:mb-8">
               <div>
-                <h2 className="text-4xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
                   Contact
                 </h2>
-                <p className="text-gray-400">
-                  Have something you’d like to discuss? Send me a message and let’s talk.
+                <p className="text-gray-400 text-sm sm:text-base">
+                  Have something you'd like to discuss? Send me a message and
+                  let's talk.
                 </p>
               </div>
-              <Share2 className="w-10 h-10 text-[#6366f1] opacity-50" />
+              <Share2 className="w-8 h-8 sm:w-10 sm:h-10 text-[#6366f1] opacity-50" />
             </div>
 
-            <form 
-              onSubmit={handleSubmit}
-              className="space-y-6"
-            >
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div
                 data-aos="fade-up"
                 data-aos-delay="100"
@@ -220,7 +214,7 @@ const ContactPage = () => {
                 className="w-full bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#6366f1]/20 active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 <Send className="w-5 h-5" />
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
             </form>
 

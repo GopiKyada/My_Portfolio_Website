@@ -20,6 +20,37 @@ body {
 	scroll-behavior: smooth !important;
 }
 
+/* Mobile optimizations */
+@media (max-width: 768px) {
+	/* Improve touch targets */
+	button, a, input, textarea {
+		min-height: 44px;
+		min-width: 44px;
+	}
+	
+	/* Better scrolling on mobile */
+	* {
+		-webkit-overflow-scrolling: touch;
+	}
+	
+	/* Prevent zoom on input focus */
+	input, textarea, select {
+		font-size: 16px;
+	}
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+	/* Remove hover effects on touch devices */
+	.hover\:scale-105:hover {
+		transform: none;
+	}
+	
+	.hover\:bg-white\/10:hover {
+		background-color: transparent;
+	}
+}
+
 @keyframes blob {
 	0%,
 	100% {

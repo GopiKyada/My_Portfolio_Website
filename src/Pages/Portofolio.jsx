@@ -2,8 +2,6 @@ import React, { useEffect, useState, useCallback } from "react";
 
 import { supabase } from "../supabase";
 
-import PropTypes from "prop-types";
-import SwipeableViews from "react-swipeable-views";
 import { useTheme } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
@@ -75,29 +73,6 @@ const ToggleButton = ({ onClick, isShowingMore }) => (
   </button>
 );
 
-function TabPanel({ children, value, index, ...other }) {
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`full-width-tabpanel-${index}`}
-      aria-labelledby={`full-width-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: { xs: 1, sm: 3 } }}>
-          <Typography component="div">{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-};
 
 function a11yProps(index) {
   return {
@@ -106,7 +81,7 @@ function a11yProps(index) {
   };
 }
 
-// techStacks tetap sama https://techicons.dev/
+// techStacks tetap sama
 const techStacks = [
   { icon: "techstacks/Python.svg", language: "Python" },
   { icon: "html.svg", language: "HTML" },
@@ -204,7 +179,7 @@ export default function FullWidthTabs() {
   // Sisa dari komponen (return statement) tidak ada perubahan
   return (
     <div
-      className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden"
+      className="px-4 sm:px-[5%] lg:px-[10%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden"
       id="Portofolio"
     >
       {/* Header section - unchanged */}
@@ -213,7 +188,7 @@ export default function FullWidthTabs() {
         data-aos="fade-up"
         data-aos-duration="1000"
       >
-        <h2 className="inline-block text-3xl md:text-5xl font-bold text-center mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
+        <h2 className="inline-block text-2xl sm:text-3xl md:text-5xl font-bold text-center mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
           <span
             style={{
               color: "#6366f1",
@@ -227,7 +202,7 @@ export default function FullWidthTabs() {
             Portfolio Showcase
           </span>
         </h2>
-        <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2">
+        <p className="text-slate-400 max-w-2xl mx-auto text-xs sm:text-sm md:text-base mt-2 px-4">
           Explore my journey through projects, certifications, and technical
           expertise. Each section represents a milestone in my continuous
           learning path.
@@ -329,14 +304,11 @@ export default function FullWidthTabs() {
           </Tabs>
         </AppBar>
 
-        <SwipeableViews
-          axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-          index={value}
-          onChangeIndex={setValue}
-        >
-          <TabPanel value={value} index={0} dir={theme.direction}>
-            <div className="container mx-auto flex justify-center items-center overflow-hidden">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
+        {/* Tab Content */}
+        {value === 0 && (
+          <>
+            <div className="container mx-auto flex justify-center items-center overflow-hidden mt-8">
+              <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-4 sm:gap-5">
                 {displayedProjects.map((project, index) => (
                   <div
                     key={project.id || index}
@@ -374,11 +346,13 @@ export default function FullWidthTabs() {
                 />
               </div>
             )}
-          </TabPanel>
+          </>
+        )}
 
-          <TabPanel value={value} index={1} dir={theme.direction}>
-            <div className="container mx-auto flex justify-center items-center overflow-hidden">
-              <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4">
+        {value === 1 && (
+          <>
+            <div className="container mx-auto flex justify-center items-center overflow-hidden mt-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
                 {displayedCertificates.map((certificate, index) => (
                   <div
                     key={certificate.id || index}
@@ -410,39 +384,39 @@ export default function FullWidthTabs() {
                 />
               </div>
             )}
-          </TabPanel>
+          </>
+        )}
 
-          <TabPanel value={value} index={2} dir={theme.direction}>
-            <div className="container mx-auto flex justify-center items-center overflow-hidden pb-[5%]">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-8 gap-5">
-                {techStacks.map((stack, index) => (
-                  <div
-                    key={index}
-                    data-aos={
-                      index % 3 === 0
-                        ? "fade-up-right"
-                        : index % 3 === 1
-                        ? "fade-up"
-                        : "fade-up-left"
-                    }
-                    data-aos-duration={
-                      index % 3 === 0
-                        ? "1000"
-                        : index % 3 === 1
-                        ? "1200"
-                        : "1000"
-                    }
-                  >
-                    <TechStackIcon
-                      TechStackIcon={stack.icon}
-                      Language={stack.language}
-                    />
-                  </div>
-                ))}
-              </div>
+        {value === 2 && (
+          <div className="container mx-auto flex justify-center items-center overflow-hidden pb-[5%] mt-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8">
+              {techStacks.map((stack, index) => (
+                <div
+                  key={index}
+                  data-aos={
+                    index % 3 === 0
+                      ? "fade-up-right"
+                      : index % 3 === 1
+                      ? "fade-up"
+                      : "fade-up-left"
+                  }
+                  data-aos-duration={
+                    index % 3 === 0
+                      ? "1000"
+                      : index % 3 === 1
+                      ? "1200"
+                      : "1000"
+                  }
+                >
+                  <TechStackIcon
+                    TechStackIcon={stack.icon}
+                    Language={stack.language}
+                  />
+                </div>
+              ))}
             </div>
-          </TabPanel>
-        </SwipeableViews>
+          </div>
+        )}
       </Box>
     </div>
   );
