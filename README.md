@@ -1,12 +1,8 @@
-# Portfolio V5
+# Portfolio
 
 Hello everyone\! 👋
 
-Let me introduce myself, I'm **Eki Zulfar Rachman**. On this occasion, I'd like to share the portfolio website project that I've developed.
-
-## 🚀 Live Demo
-
-**Website Link:** [https://www.eki.my.id/](https://www.eki.my.id/)
+Let me introduce myself, I'm **Gopi Kyada**. On this occasion, I'd like to share the portfolio website project that I've developed.
 
 ## 🛠️ Tech Stack
 
