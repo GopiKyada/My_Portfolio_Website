@@ -84,18 +84,29 @@ function a11yProps(index) {
 // techStacks tetap sama
 const techStacks = [
   { icon: "techstacks/Python.svg", language: "Python" },
-  { icon: "html.svg", language: "HTML" },
-  { icon: "css.svg", language: "CSS" },
-  { icon: "javascript.svg", language: "JavaScript" },
-  { icon: "tailwind.svg", language: "Tailwind CSS" },
-  { icon: "reactjs.svg", language: "ReactJS" },
-  { icon: "vite.svg", language: "Vite" },
-  { icon: "nodejs.svg", language: "Node JS" },
-  { icon: "bootstrap.svg", language: "Bootstrap" },
-  { icon: "firebase.svg", language: "Firebase" },
-  { icon: "MUI.svg", language: "Material UI" },
-  { icon: "vercel.svg", language: "Vercel" },
-  { icon: "SweetAlert.svg", language: "SweetAlert2" },
+  { icon: "techstacks/Hadoop.png", language: "Hadoop" },
+  { icon: "techstacks/Apache_Spark.svg", language: "Apache Spark" },
+  { icon: "techstacks/Azure.png", language: "Azure" },
+  { icon: "techstacks/Pyspark.png", language: "Pyspark" },
+  { icon: "techstacks/Hive.png", language: "Hive" },
+  { icon: "techstacks/Databricks.svg", language: "Databricks" },
+  { icon: "techstacks/data-factory.svg", language: "Data Factory" },
+  {
+    icon: "techstacks/Azure-Synapse-Analytics.svg",
+    language: "Azure Synapse Analytics",
+  },
+  { icon: "techstacks/Azure-SQL-Database.png", language: "Azure SQL Database" },
+  {
+    icon: "techstacks/Microsoft-SQL-Server.png",
+    language: "Microsoft SQL Server",
+  },
+  { icon: "techstacks/MySQL.png", language: "MySQL" },
+  { icon: "techstacks/Git.png", language: "Git & Github" },
+  { icon: "techstacks/html.svg", language: "HTML" },
+  { icon: "techstacks/css.svg", language: "CSS" },
+  { icon: "techstacks/javascript.svg", language: "JavaScript" },
+  { icon: "techstacks/PHP.png", language: "PHP" },
+  { icon: "techstacks/Laravel.png", language: "Laravel" },
 ];
 
 export default function FullWidthTabs() {
