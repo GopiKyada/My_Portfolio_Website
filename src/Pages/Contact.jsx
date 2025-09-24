@@ -35,8 +35,8 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     Swal.fire({
-      title: "Mengirim Pesan...",
-      html: "Harap tunggu selagi kami mengirim pesan Anda",
+      title: "Sending Message...",
+      html: "Please wait while we send your message...",
       allowOutsideClick: false,
       didOpen: () => {
         Swal.showLoading();
@@ -44,17 +44,17 @@ const ContactPage = () => {
     });
 
     try {
-      // Ganti dengan email Anda di FormSubmit
+      // Replace with your email address or use an external service like FormSubmit
       const formSubmitUrl = "https://formsubmit.co/gnkyada177@gmail.com";
 
-      // Siapkan data form untuk FormSubmit
+      // Prepare the data for submission
       const submitData = new FormData();
       submitData.append("name", formData.name);
       submitData.append("email", formData.email);
       submitData.append("message", formData.message);
-      submitData.append("_subject", "Pesan Baru dari Website Portfolio");
-      submitData.append("_captcha", "false"); // Nonaktifkan captcha
-      submitData.append("_template", "table"); // Format email sebagai tabel
+      submitData.append("_subject", "New Message From Portfolio Website ");
+      submitData.append("_captcha", "false"); // Disable captcha verification
+      submitData.append("_template", "table"); // Format email as table
 
       await axios.post(formSubmitUrl, submitData, {
         headers: {
@@ -63,8 +63,8 @@ const ContactPage = () => {
       });
 
       Swal.fire({
-        title: "Berhasil!",
-        text: "Pesan Anda telah berhasil terkirim!",
+        title: "Success!",
+        text: "Your message has been sent successfully!",
         icon: "success",
         confirmButtonColor: "#6366f1",
         timer: 2000,
@@ -79,8 +79,8 @@ const ContactPage = () => {
     } catch (error) {
       if (error.request && error.request.status === 0) {
         Swal.fire({
-          title: "Berhasil!",
-          text: "Pesan Anda telah berhasil terkirim!",
+          title: "Success!",
+          text: "Your message has been sent successfully!",
           icon: "success",
           confirmButtonColor: "#6366f1",
           timer: 2000,
@@ -94,8 +94,8 @@ const ContactPage = () => {
         });
       } else {
         Swal.fire({
-          title: "Gagal!",
-          text: "Terjadi kesalahan. Silakan coba lagi nanti.",
+          title: "Failed!",
+          text: "An error occurred. Please try again later.",
           icon: "error",
           confirmButtonColor: "#6366f1",
         });
