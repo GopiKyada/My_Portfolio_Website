@@ -95,7 +95,7 @@ const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
 const WORDS = ["Big Data Developer", "Azure Data Engineer", "Data Enthusiast"];
-const TECH_STACK = ["Python", "Hadoop", "SQL", "Spark", "Azure", "Pyspark"];
+const TECH_STACK = ["Hadoop", "Azure", "AWS", "Apache Spark", "Python", "SQL"];
 const SOCIAL_LINKS = [
   { icon: Github, link: "https://github.com/GopiKyada/" },
   { icon: Linkedin, link: "https://www.linkedin.com/in/gopi-kyada-486070375/" },
