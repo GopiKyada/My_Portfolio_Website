@@ -87,6 +87,7 @@ const techStacks = [
   { icon: "techstacks/Hadoop.png", language: "Hadoop" },
   { icon: "techstacks/Apache_Spark.svg", language: "Apache Spark" },
   { icon: "techstacks/Azure.png", language: "Azure" },
+  { icon: "https://res.cloudinary.com/dw1kevkiy/image/upload/v1765194956/152a15a6bf3756c63c9f5b2effa70bc6_l087uk.png", language: "AWS" }
   { icon: "techstacks/Pyspark.png", language: "Pyspark" },
   { icon: "techstacks/Hive.png", language: "Hive" },
   { icon: "techstacks/Databricks.svg", language: "Databricks" },
