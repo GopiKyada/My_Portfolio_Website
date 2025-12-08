@@ -275,7 +275,7 @@ const AboutPage = () => {
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
               <a
-                href="https://drive.google.com/file/d/10vG0vcqmyLtMmE5iKhle5LEINC7Xd8fc/view?usp=sharing"
+                href="https://drive.google.com/file/d/1xltgWoQNlIJbLQgCVoKDXgLSVP-19pYg/view?usp=sharing"
                 className="w-full lg:w-auto"
               >
                 <button
