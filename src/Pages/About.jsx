@@ -212,7 +212,7 @@ const AboutPage = () => {
         value: YearExperience,
         label: "Experience",
         description:
-          "Experience in Years",
+          "Hands-on industry experience",
         animation: "fade-left",
       },
     ],
@@ -251,12 +251,10 @@ const AboutPage = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-              I hold a B.Sc. in Information Technology and have professional
-              experience as a Backend PHP Developer. Over time, my passion for
-              data grew, leading me to specialize in Data Engineering and Big
-              Data. I focus on building scalable pipelines, optimizing data
-              systems, and delivering solutions that turn raw data into real
-              business value.
+             I hold a B.Sc. in Information Technology and have professional experience as a Software Engineer. 
+              Over time, my passion for data grew, leading me to specialize in Data Engineering and Big Data. 
+              I focus on building scalable pipelines, optimizing data systems, and delivering solutions that
+              turn raw data into real business value.
             </p>
 
             {/* Quote Section */}
