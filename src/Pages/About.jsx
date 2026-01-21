@@ -134,18 +134,31 @@ const AboutPage = () => {
 
     const startDate = new Date("2024-08-01");
     const today = new Date();
-    const experience =
-      today.getFullYear() -
-      startDate.getFullYear() -
-      (today <
-      new Date(today.getFullYear(), startDate.getMonth(), startDate.getDate())
-        ? 1
-        : 0);
+
+    let years = today.getFullYear() - startDate.getFullYear();
+    let months = today.getMonth() - startDate.getMonth();
+    
+    // adjust if current day is less than start day
+    if (today.getDate() < startDate.getDate()) {
+      months -= 1;
+    }
+    
+    // if months goes negative, fix year & month
+    if (months < 0) {
+      years -= 1;
+      months += 12;
+    }
+    
+    // Final format: "1 year 5 months"
+    const experienceText = `${years} year${years !== 1 ? "s" : ""} ${months} month${
+      months !== 1 ? "s" : ""
+    }`;
+
 
     return {
       totalProjects: storedProjects.length,
       totalCertificates: storedCertificates.length,
-      YearExperience: experience,
+      YearExperience: experienceText,
     };
   }, []);
 
