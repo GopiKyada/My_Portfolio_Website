@@ -132,7 +132,7 @@ const AboutPage = () => {
       localStorage.getItem("certificates") || "[]"
     );
 
-    const startDate = new Date("2021-11-06");
+    const startDate = new Date("2024-08-01");
     const today = new Date();
     const experience =
       today.getFullYear() -
@@ -195,7 +195,7 @@ const AboutPage = () => {
       {
         icon: Globe,
         color: "from-[#6366f1] to-[#a855f7]",
-        value: YearExperience,
+        value: YearExperience "Years",
         label: "Experience",
         description:
           "Continuous learning journey(Get full Information on Resume)",
