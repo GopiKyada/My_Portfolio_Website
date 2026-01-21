@@ -89,7 +89,8 @@ const StatCard = memo(
             <Icon className="w-8 h-8 text-white" />
           </div>
           <span
-            className="text-4xl font-bold text-white"
+            className={`font-bold text-white text-right leading-tight break-words whitespace-normal max-w-[170px]
+              ${String(value).length > 6 ? "text-3xl" : "text-4xl"}`}
             data-aos="fade-up-left"
             data-aos-duration="1500"
             data-aos-anchor-placement="top-bottom"
