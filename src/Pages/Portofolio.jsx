@@ -114,8 +114,6 @@ const techStacks = [
   { icon: "techstacks/html.svg", language: "HTML" },
   { icon: "techstacks/css.svg", language: "CSS" },
   { icon: "techstacks/javascript.svg", language: "JavaScript" },
-  { icon: "techstacks/PHP.png", language: "PHP" },
-  { icon: "techstacks/Laravel.png", language: "Laravel" },
 ];
 
 export default function FullWidthTabs() {
